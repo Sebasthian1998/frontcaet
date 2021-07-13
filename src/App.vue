@@ -1,18 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/">Casa</router-link>|
+    <router-link to="/autor">Autor</router-link>|
+    <router-link to="/otrapagina">Otra pagina</router-link>
+    <hr>
+   <!-- <a @click="redireccionar('home')">Casa</a> |
+    <a @click="redireccionar('autor')">Autor</a>|
+    <a @click="redireccionar('otrapag')">Otra pagina</a> -->
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  methods:{
+    redireccionar(direccion){
+      this.$router.push({name:direccion})
+    }
   }
+
 }
 </script>
 
